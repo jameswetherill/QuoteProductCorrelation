@@ -19,6 +19,9 @@
 			<li style="width: 160px;"><a
 				href="<spring:url value="/qpcs.html" htmlEscape="true" />"><i
 					class="icon-th-list"></i> Quote to Product</a></li>
+			<li style="width: 160px;"><a
+				href="<spring:url value="/process.html" htmlEscape="true" />"><i
+					class="icon-th-list"></i> Process Text</a></li>
 		</ul>
 	</div>
 </div>

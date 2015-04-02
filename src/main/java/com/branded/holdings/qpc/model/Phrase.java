@@ -21,6 +21,11 @@ public class Phrase extends BaseEntity {
 	@Column(name = "description")
 	@NotEmpty
 	private String description;
+	
+	
+	@Column(name = "proccessed" )
+	@NotEmpty
+	private Integer proccessed;
 
 
 	/**

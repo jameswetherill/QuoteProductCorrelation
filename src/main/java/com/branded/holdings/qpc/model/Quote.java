@@ -39,7 +39,7 @@ public class Quote extends Phrase {
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "quote_topic", joinColumns = @JoinColumn(name = "quote_id"), inverseJoinColumns = @JoinColumn(name = "topic_id"))
 	private Set<Topic> topics;
-
+	
 	protected void setTopicsInternal(Set<Topic> topics) {
 		this.topics = topics;
 	}

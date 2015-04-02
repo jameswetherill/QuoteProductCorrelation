@@ -41,16 +41,16 @@
 			</datatables:column>
 		</datatables:table>
 
-		<!--  table class="table-buttons">
+		<table class="table-buttons">
         <tr>
             <td>
-                <a href="<spring:url value="/quotes.xml" htmlEscape="true" />">View as XML</a>
+                <a href='<spring:url value="/quotes/new" htmlEscape="true"/>'>Add Quote</a>
+
             </td>
-            <td>
-                <a href="<spring:url value="/quotes.atom" htmlEscape="true" />">Subscribe to Atom feed</a>
+            <td>&nbsp;
             </td>
         </tr>
-    </table -->
+    </table>
 
 		<jsp:include page="../fragments/footer.jsp" />
 	</div>

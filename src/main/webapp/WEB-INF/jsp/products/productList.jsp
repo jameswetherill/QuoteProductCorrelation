@@ -15,7 +15,7 @@
 	<div class="container">
 		<jsp:include page="../fragments/bodyHeader.jsp" />
 
-		<h2>Quotes</h2>
+		<h2>Products</h2>
 
 		<datatables:table id="products" data="${products.productList}" row="product"
 			theme="bootstrap2" cssClass="table table-striped" pageable="false"
@@ -41,16 +41,6 @@
 			</datatables:column>
 		</datatables:table>
 
-		<!--  table class="table-buttons">
-        <tr>
-            <td>
-                <a href="<spring:url value="/products.xml" htmlEscape="true" />">View as XML</a>
-            </td>
-            <td>
-                <a href="<spring:url value="/products.atom" htmlEscape="true" />">Subscribe to Atom feed</a>
-            </td>
-        </tr>
-    </table -->
 
 		<jsp:include page="../fragments/footer.jsp" />
 	</div>

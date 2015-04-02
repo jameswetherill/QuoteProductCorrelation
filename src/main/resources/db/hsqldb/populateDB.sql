@@ -8,7 +8,7 @@ INSERT INTO emotiontype VALUES (6, 'Fear');
 INSERT INTO emotiontype VALUES (7, 'Anger');
 INSERT INTO emotiontype VALUES (8, 'Neutral');
 
-INSERT INTO quote values (1,'An Englishman teaching an American about food is like the blind leading the one-eyed.', 'A. J. Liebling');
+INSERT INTO quote values (1,'An Englishman teaching an American about food is like the blind leading the one-eyed.', 'A. J. Liebling',1);
 INSERT INTO topic values (1,8,'Englishman', 0.1);
 INSERT INTO topic values (2,8,'American', 0.1);
 INSERT INTO topic values (3,8,'Food', 0.1);

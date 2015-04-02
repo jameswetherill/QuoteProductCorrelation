@@ -34,13 +34,15 @@ ALTER TABLE topic ADD CONSTRAINT fk_topic_emotion FOREIGN KEY (emotiontype_id) R
 CREATE TABLE quote(
 	id INTEGER IDENTITY PRIMARY KEY,
 	description varchar(1024),
-	author varchar(256)
+	author varchar(256),
+	proccessed INTEGER NOT NULL
 );
 
 CREATE TABLE product(
 	id INTEGER IDENTITY PRIMARY KEY,
 	description varchar(1024),
-	retailer varchar(256)
+	retailer varchar(256),
+	proccessed INTEGER NOT NULL
 );
 
 CREATE TABLE product_topic (
