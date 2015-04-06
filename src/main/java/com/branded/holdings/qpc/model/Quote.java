@@ -32,6 +32,7 @@ import org.springframework.beans.support.PropertyComparator;
 @Table(name = "quote")
 public class Quote extends Phrase {
 
+	
 	@Column(name = "author")
 	@NotEmpty
 	private String author;

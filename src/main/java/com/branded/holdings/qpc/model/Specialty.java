@@ -27,4 +27,5 @@ import javax.persistence.Table;
 @Table(name = "specialties")
 public class Specialty extends NamedEntity {
 
+
 }

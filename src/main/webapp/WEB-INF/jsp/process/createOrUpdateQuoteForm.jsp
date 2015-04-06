@@ -45,22 +45,24 @@
 			</div>
 			<qpc:inputField label="Author" name="author" />
 			<div class="control-group">
-				<c:if test="${quote.nrOfTopics > 0}">
-					<datatables:table id="topics" data="${quote.topics}" row="topic"
-						theme="bootstrap2" cssClass="table table-striped" pageable="false"
-						info="false">
-						<datatables:column title="Description">
-							<c:out value="${topic.description}"></c:out>
-						</datatables:column>
-						<datatables:column title="Description">
-							<c:out value="${topic.type.name}"></c:out>
-						</datatables:column>
-						<datatables:column title="Description">
-							<c:out value="${topic.type.name}"></c:out>
-						</datatables:column>
-					</datatables:table>
-				</c:if>
-				<c:if test="${quote.nrOfTopics == 0}">none</c:if>
+				<c:choose>
+					<c:when test="${quote.nrOfTopics > 0}">
+						<datatables:table id="topics" data="${quote.topics}" row="topic"
+							theme="bootstrap2" cssClass="table table-striped"
+							pageable="false" info="false">
+							<datatables:column title="Description">
+								<c:out value="${topic.description}"></c:out>
+							</datatables:column>
+							<datatables:column title="Emotion">
+								<c:out value="${topic.type.name}"></c:out>
+							</datatables:column>
+							<datatables:column title="Description">
+								<c:out value="${topic.weight}"></c:out>
+							</datatables:column>
+						</datatables:table>
+					</c:when>
+					<c:otherwise>none</c:otherwise>
+				</c:choose>
 			</div>
 			<div class="form-actions">
 				<c:choose>

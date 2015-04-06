@@ -47,7 +47,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Table(name = "pets")
 public class Pet extends NamedEntity {
 
-    @Column(name = "birth_date")
+   
+	@Column(name = "birth_date")
     @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime")
     @DateTimeFormat(pattern = "yyyy/MM/dd")
     private DateTime birthDate;

@@ -32,7 +32,7 @@ import org.springframework.beans.support.PropertyComparator;
 @Entity
 @Table(name = "product")
 public class Product extends Phrase {
-	
+
 	@Column(name = "retailer")
 	@NotEmpty
 	private String retailer;

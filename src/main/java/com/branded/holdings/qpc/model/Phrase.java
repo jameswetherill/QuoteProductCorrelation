@@ -18,6 +18,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Phrase extends BaseEntity {
 
 	
+	
 	@Column(name = "description")
 	@NotEmpty
 	private String description;

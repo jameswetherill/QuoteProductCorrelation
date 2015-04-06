@@ -35,7 +35,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Table(name = "visits")
 public class Visit extends BaseEntity {
 
-    /**
+    
+	/**
      * Holds value of property date.
      */
     @Column(name = "visit_date")

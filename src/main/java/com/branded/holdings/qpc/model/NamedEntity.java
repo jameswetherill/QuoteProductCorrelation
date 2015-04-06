@@ -29,7 +29,7 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 public class NamedEntity extends BaseEntity {
 
-    @Column(name = "name")
+   @Column(name = "name")
     private String name;
 
 

@@ -30,7 +30,7 @@ public class JdbcPhraseRepositoryImpl implements PhraseRepository {
 
     private JdbcTemplate jdbcTemplate;
     private SimpleJdbcInsert insertQuote;
-	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+//	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
     @Autowired
     public JdbcPhraseRepositoryImpl(DataSource dataSource) {
@@ -40,7 +40,7 @@ public class JdbcPhraseRepositoryImpl implements PhraseRepository {
         .withTableName("quote")
         .usingGeneratedKeyColumns("id");
         
-        this.namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
+//        this.namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
     }
 
     /**
@@ -84,16 +84,16 @@ public class JdbcPhraseRepositoryImpl implements PhraseRepository {
 
 	@Override
 	public void saveQuote(Quote quote) {
-		if (quote.isNew()) {
-            Number newKey = this.insertQuote.executeAndReturnKey(
-                    createQuoteParameterSource(quote));
-            quote.setId(newKey.intValue());
-        } else {
-            this.namedParameterJdbcTemplate.update(
-                    "UPDATE quote SET description=:description, author=:author " +
-                            "WHERE id=:id",
-                    createQuoteParameterSource(quote));
-        }
+//		if (quote.isNew()) {
+//            Number newKey = this.insertQuote.executeAndReturnKey(
+//                    createQuoteParameterSource(quote));
+//            quote.setId(newKey.intValue());
+//        } else {
+//            this.namedParameterJdbcTemplate.update(
+//                    "UPDATE quote SET description=:description, author=:author " +
+//                            "WHERE id=:id",
+//                    createQuoteParameterSource(quote));
+//        }
 		
 	}
 	

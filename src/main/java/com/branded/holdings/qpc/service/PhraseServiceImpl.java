@@ -31,6 +31,9 @@ public class PhraseServiceImpl implements PhraseService {
 	@Autowired
 	private PhraseRepository phraseRepo;
 
+	@Autowired
+	private PhraseProcessor processorService;
+	
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -50,6 +53,7 @@ public class PhraseServiceImpl implements PhraseService {
 	 * holdings.qpc.model.Quote)
 	 */
 	@Override
+    @Transactional
 	public void saveQuote(Quote quote) throws DataAccessException {
 
 		phraseRepo.saveQuote(quote);
@@ -65,37 +69,42 @@ public class PhraseServiceImpl implements PhraseService {
 	 */
 	@Override
 	public void processQuote(Quote quote) {
-		// TODO
+		Quote qt = (Quote) processorService.processPhrase(quote);
+		saveQuote(qt);
 	}
 
 	@Override
+    @Transactional(readOnly = true)
 	public Collection<Product> findProducts() throws DataAccessException {
 		return phraseRepo.findProducts();
 	}
 
 	@Override
+	@Transactional
 	public void saveProduct(Product product) throws DataAccessException {
-		phraseRepo.saveProduct(product);
+		//phraseRepo.saveProduct(product);
 	}
 
 	@Override
 	public void processProduct(Product product) {
-		// TODO Auto-generated method stub
-
+		Product prod = (Product) processorService.processPhrase(product);
+		//saveProduct(prod);
 	}
 
 	@Override
+    @Transactional(readOnly = true)
 	public Collection<QuoteProductConnector> findQuoteProductConnectors()
 			throws DataAccessException {
-		// TODO Auto-generated method stub
 		return phraseRepo.findQuoteProductConnectors();
 	}
 
 	@Override
+	@Transactional
 	public void saveQuoteProductConnector(QuoteProductConnector qpc)
 			throws DataAccessException {
 		phraseRepo.saveQuoteProductConnector(qpc);
-		
+
 	}
+
 
 }
