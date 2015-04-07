@@ -63,6 +63,7 @@
 	
 	<bean id="processorService" class="com.branded.holdings.qpc.service.PhraseProcessorImpl">	
 		<property name="stoplists" value="/stoplists/en.txt" />
+		<property name="numTopics" value="100" />
 	</bean>
 
 </beans>
